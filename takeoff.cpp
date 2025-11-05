@@ -18,6 +18,7 @@
 #include <mavros_msgs/SetMode.h>
 #include <mavros_msgs/State.h>
 
+
 mavros_msgs::State current_state;
 void state_cb(const mavros_msgs::State::ConstPtr& msg){
     current_state = *msg;
@@ -28,9 +29,9 @@ geometry_msgs::PoseStamped current_pose;
 void pose_cb(const geometry_msgs::PoseStamped::ConstPtr& msg){
     current_pose = *msg;
 }
-
 int main(int argc, char **argv)
 {
+    setlocale(LC_CTYPE, "");
     ros::init(argc, argv, "offb_node");
     ros::NodeHandle nh;
 
