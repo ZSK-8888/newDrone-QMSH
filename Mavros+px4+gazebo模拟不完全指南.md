@@ -67,7 +67,7 @@ catkin_package(
 
 # 添加可执行文件
 # 格式: add_executable(可执行文件名 C++源文件名)
-add_executable(offboard_control_node src/offboard_control.cpp)
+add_executable(takeoff_node src/takeoff.cpp)
 
 # 链接可执行文件所需的库
 target_link_libraries(offboard_control_node
@@ -115,7 +115,7 @@ roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
 source /opt/ros/noetic/setup.bash
 # Source 你的工作空间
 source ~/<你的工作空间名>/devel/setup.bash
-rosrun px4_offboard_control offboard_control_node
+rosrun simulation1 takeoff_node
 ```
 
 
